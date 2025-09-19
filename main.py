@@ -2438,7 +2438,6 @@ def handle_callback(call):
                              parse_mode='MarkdownV2')
 
 
-if __name__ == "__main__":
 def start_bot_services():
     """Start all bot services (Flask, scheduler, ping)"""
     global bot_info_cache
@@ -2541,6 +2540,9 @@ def start_bot_with_retry():
         # If we get here, polling stopped normally (should not happen with none_stop=True)
         print("⚠️ Polling stopped unexpectedly, restarting...")
         time.sleep(5)
+
+
+if __name__ == "__main__":
     try:
         # Initialize services once
         start_bot_services()
